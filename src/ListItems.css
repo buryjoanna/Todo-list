@@ -1,0 +1,24 @@
+.list{
+    color:hotpink;
+    width: 300px;
+    background-color: lavender;
+    height: 50px;
+    margin: 20px auto;
+    border-radius: 5px;
+}
+.list p{
+    padding: 10px;
+    position: relative;
+    font-size: large;
+    font-weight: bold;
+}
+.list p span{
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+}
+.faicons{
+    margin: 0 5px;
+    font-size: 20px;
+}
+
