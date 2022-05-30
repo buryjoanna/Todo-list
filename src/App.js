@@ -4,7 +4,9 @@ import "./App.css";
 import ListItems from "./ListItems";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import {faTrash} from '@fortawesome/free-solid-svg-icons'
-library.add(faTrash)
+import {faSquareCheck} from '@fortawesome/free-solid-svg-icons'
+
+library.add(faTrash, faSquareCheck)
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -13,11 +15,13 @@ class App extends React.Component {
       currentItem: {
         text: "",
         key: "",
+        completed: false,
       },
     };
     this.addItem = this.addItem.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.deleteItem = this.deleteItem.bind(this)
+    this.completeItem = this.completeItem.bind(this)
   }
   addItem(e) {
     e.preventDefault();
@@ -46,9 +50,20 @@ class App extends React.Component {
       currentItem: {
         text: e.target.value,
         key: Date.now(),
+        completed: false
       },
     });
   }
+
+  completeItem(key) {
+    console.log('Complete item', key)
+    const currentItem = this.state.find()
+    this.setState({...this.state, currentItem: {...this.state.currentItem, completed: true}});
+  }
+  strikeThrough(){
+    
+  }
+  
 
   render() {
     return (
@@ -66,6 +81,7 @@ class App extends React.Component {
           <p>{this.state.items.text}</p>
           <ListItems items = {this.state.items}
           deleteItem ={this.deleteItem}
+          completeItem={this.completeItem}
           ></ListItems>
         </header>
       </div>
