@@ -7,9 +7,12 @@ function ListItems(props) {
   const listItems = items.map( item =>
     {
       return <div className='list' key={item.key}>
-        <p>{item.text}
+        <p>{item.text} - {`${item.completed}`}
         <span>
-  <FontAwesomeIcon className='faicons' icon= 'trash'
+        <FontAwesomeIcon className='faicons-check' icon= 'square-check'
+onClick={()=> props.completeItem()}/>
+
+  <FontAwesomeIcon className='faicons-trash' icon= 'trash'
   onClick={()=> props.deleteItem(item.key)}
   />
 

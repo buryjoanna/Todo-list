@@ -8,7 +8,7 @@
 }
 .list p{
     padding: 10px;
-    position: relative;
+    position:relative;
     font-size: large;
     font-weight: bold;
 }
@@ -17,8 +17,13 @@
     right: 10px;
     cursor: pointer;
 }
-.faicons{
+.faicons-check{
+    margin-right:  7px;
+ }
+.faicons-trash{
     margin: 0 5px;
     font-size: 20px;
 }
+
+
 
